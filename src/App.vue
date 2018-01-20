@@ -14,7 +14,12 @@
       }
     },
     created() {
-      this.$socket.emit('join', "aasxasxaxasxas")
+     // this.$socket.emit('join', "aasxasxaxasxas")
+    },
+    methods:{
+      fetchFromServer(){
+
+      }
     },
     sockets: {
       connect: function () {
@@ -33,6 +38,9 @@
           if(this.$route.name !== 'second'){
             window.location.href = '#/second'
           }
+          let odds = JSON.parse(val.odds)
+          this.$store.commit('doubleOpportunityPositive', odds.doubleOpportunity.firstPlace)
+          this.$store.commit('doubleOpportunityNegative', odds.doubleOpportunity.firstPlaceNegative)
         }else if(val.status === 'video' && val.page === 'third'){
           window.location.href = '#/video'
 
@@ -110,6 +118,7 @@
   }
 
   .second-column div {
+    min-width: 40px;
     display: grid;
     align-content: center;
     width: 100%;

@@ -9,7 +9,7 @@
     "start": "node app.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "watch": "webpack --watch"
+    "watch": "NODE_ENV=production webpack --watch"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -17,6 +17,7 @@
     "vue": "^2.4.4",
     "vue-router": "^3.0.1",
     "vue-socket.io": "^2.1.1-a",
+    "vue-video-player": "^5.0.1",
     "vuex": "^3.0.1"
   },
   "browserslist": [

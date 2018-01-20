@@ -10,8 +10,8 @@ const store = new Vuex.Store({
     positiveOdds: {},
     negativeOdds: {},
     doubleOpportunity: {
-      positive: [],
-      negative: []
+      firstPlace: [],
+      firstPlaceNegative: []
     }
   },
   getters: {
@@ -45,10 +45,10 @@ const store = new Vuex.Store({
       state.negativeOdds = negativeOdds
     },
     doubleOpportunityPositive(state, positive) {
-      state.doubleOpportunity.positive = positive
+      state.doubleOpportunity.firstPlace = positive
     },
     doubleOpportunityNegative(state, negative) {
-      state.doubleOpportunity.positive = negative
+      state.doubleOpportunity.firstPlaceNegative = negative
     }
   },
   actions: {
